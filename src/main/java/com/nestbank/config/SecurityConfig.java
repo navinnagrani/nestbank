@@ -55,6 +55,7 @@ public class SecurityConfig {
                         // CUSTOMER ONLY
                         .requestMatchers("/payments/transfer").hasRole("CUSTOMER")
                         .requestMatchers("/transactions/**").hasRole("CUSTOMER")
+                        .requestMatchers("/payments/card").hasRole("CUSTOMER")
 
                         // BOTH CAN VIEW ACCOUNTS
                         .requestMatchers("/accounts/**").hasAnyRole("ADMIN", "CUSTOMER")
